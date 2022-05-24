@@ -1,7 +1,14 @@
 "use strict";
 
+// Formula: Digito*2^indice
 function BinarioADecimal(num) {
+  // El param num es un str
   // tu codigo aca
+  let enDecimal = 0;
+  for (let i = 0; i < num.length; i++) {
+    enDecimal = enDecimal + num[i] * 2 ** (num.length - 1 - i); // - i para que itere de derecha a izquierda
+  }
+  return enDecimal;
 }
 
 function DecimalABinario(num) {
@@ -28,3 +35,4 @@ module.exports = {
 };
 
 console.log(DecimalABinario(19));
+console.log(BinarioADecimal(10011));
